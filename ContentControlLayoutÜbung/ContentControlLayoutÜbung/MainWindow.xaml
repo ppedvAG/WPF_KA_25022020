@@ -1,0 +1,50 @@
+﻿<Window x:Class="ContentControlLayoutÜbung.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ContentControlLayoutÜbung"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="400">
+    <TabControl>
+        <TabItem Header="Page 1" />
+
+        <TabItem IsSelected="True">
+            <TabItem.Header>
+                <StackPanel Orientation="Horizontal">
+                    <Ellipse Height="10" Width="10"  Fill="Red"/>
+                    <TextBlock>Page2</TextBlock>
+                </StackPanel>
+            </TabItem.Header>
+            <GroupBox >
+                <GroupBox.Header>
+                    <CheckBox>Groupbox Header</CheckBox>
+                </GroupBox.Header>
+                <Expander IsExpanded="True" Header="My Expander"  Foreground="White">
+                    <Expander.Background>
+                        <LinearGradientBrush EndPoint="1,1" StartPoint="0,0">
+                            <GradientStop Color="#FF679EFF" Offset="0"/>
+                            <GradientStop Color="#9BE449" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Expander.Background>
+                    <StackPanel>
+                        <TextBlock TextWrapping="Wrap" >
+                            Lorem ipsum <LineBreak/>
+                            <Run FontSize="17" FontFamily="Times New Roman" FontWeight="Bold">
+                              amet, consectetur </Run>
+                            adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pretium viverra suspendisse potenti nullam ac tortor vitae purus. Platea dictumst vestibulum rhoncus est pellentesque elit. Ultrices neque ornare aenean euismod elementum nisi. Est ultricies integer quis auctor elit sed vulputate mi. Quam elementum pulvinar etiam non quam lacus. Ac placerat vestibulum lectus mauris ultrices eros in cursus. Rhoncus est pellentesque elit ullamcorper dignissim cras tincidunt. Proin nibh nisl condimentum id. Quis eleifend quam adipiscing vitae proin sagittis nisl rhoncus. Integer vitae justo eget magna fermentum iaculis eu non. Feugiat scelerisque varius morbi enim nunc faucibus a.
+                        </TextBlock>
+                        <Button HorizontalAlignment="Center" >
+                            <StackPanel Orientation="Vertical">
+                                <Image Source="Assets/emotion_brains.png" Stretch="None"/>
+                                <!--<Rectangle Fill="Yellow" Width="30" Height="30" Margin="4"/>-->
+                                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center">Lala</TextBlock>
+                            </StackPanel>
+                        </Button>
+                    </StackPanel>
+                </Expander>
+            </GroupBox>
+        </TabItem>
+    </TabControl>
+
+</Window>
