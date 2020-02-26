@@ -1,0 +1,66 @@
+﻿<Window x:Class="HalloBinding.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HalloBinding"
+        mc:Ignorable="d" Language="de"
+        Title="MainWindow" Height="450" Width="200">
+    <Window.Resources>
+        <BooleanToVisibilityConverter x:Key="boolToVisConv"/>
+        <local:BoolToYellowBlue x:Key="boolToBlue"/>
+        <local:SliderToColor x:Key="sliderToColor"/>
+    </Window.Resources>
+    <Window.Background>
+        <MultiBinding Converter="{StaticResource sliderToColor}">
+            <Binding ElementName="r" Path="Value"/>
+            <Binding ElementName="g" Path="Value"/>
+            <Binding ElementName="b" Path="Value"/>
+        </MultiBinding>
+    </Window.Background>
+
+    <StackPanel Margin="12">
+        <TextBox Text="{Binding ElementName=tb2,Path=Text,UpdateSourceTrigger=PropertyChanged}"
+                 Background="{Binding ElementName=tb2,Path=Text}"/>
+        <TextBox Name="tb2"/>
+        <TextBlock Text="{Binding ElementName=tb2,Path=Text.Length}"/>
+        <Slider Maximum="100" Name="sl1"/>
+        <TextBlock Text="{Binding ElementName=sl1,Path=Value,StringFormat='#0.00'}"
+                   FontSize="{Binding ElementName=sl1,Path=Value}" RenderTransformOrigin="0.5,0.5">
+            <TextBlock.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="{Binding ElementName=sl1,Path=Value}"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBlock.RenderTransform>
+        </TextBlock>
+        <Image Visibility="{Binding ElementName=cb1,Path=IsChecked,Converter={StaticResource boolToVisConv}}" 
+               Source="subwoofer.png" Stretch="None"/>
+        <CheckBox FlowDirection="RightToLeft"
+                  Style="{DynamicResource CheckBoxStyle1}" 
+                  Name="cb1" IsChecked="True">👁</CheckBox>
+
+        <CheckBox Name="cb2">Blau/Gelb</CheckBox>
+        <Rectangle Fill="{Binding ElementName=cb2,Path=IsChecked,Converter={StaticResource boolToBlue}}"
+                    Width="40" Height="40" Stroke="Black" StrokeThickness="2"/>
+
+
+        <GroupBox>
+            <GroupBox.Header>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="{Binding ElementName=r,Path=Value,StringFormat='\{0\};'}"/>
+                    <TextBlock Text="{Binding ElementName=g,Path=Value,StringFormat='\{0\};'}"/>
+                    <TextBlock Text="{Binding ElementName=b,Path=Value,StringFormat='\{0\};'}"/>
+                </StackPanel>
+            </GroupBox.Header>
+            <StackPanel>
+                <Slider Name="r" Maximum="255" IsSnapToTickEnabled="True"/>
+                <Slider Name="g" Maximum="255" IsSnapToTickEnabled="True"/>
+                <Slider Name="b" Maximum="255" IsSnapToTickEnabled="True"/>
+            </StackPanel>
+        </GroupBox>
+
+    </StackPanel>
+</Window>
