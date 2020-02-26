@@ -1,0 +1,26 @@
+﻿<Window x:Class="HalloRessourcen.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HalloRessourcen"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="400">
+    <Window.Resources>
+      </Window.Resources>
+
+    <StackPanel Margin="12">
+        <Button FontFamily="{StaticResource myFont}" Background="{StaticResource myColor}" Click="ChangeMyColor">Button</Button>
+        <Button FontFamily="{StaticResource myFont}" Background="{DynamicResource myColor}">Button</Button>
+        <Button Background="{StaticResource myColor}">Button</Button>
+        <GroupBox>
+            <GroupBox.Resources>
+                <SolidColorBrush x:Key="myColor" Color="#D62ECF"/>
+            </GroupBox.Resources>
+            <StackPanel>
+                <Button Background="{DynamicResource myColor}">Button</Button>
+                <Button Background="{StaticResource myColor}">Button</Button>
+            </StackPanel>
+        </GroupBox>
+    </StackPanel>
+</Window>
