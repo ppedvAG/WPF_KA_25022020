@@ -7,11 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="subwoofer.png" />
+    <None Remove="🧦.png" />
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="subwoofer.png" />
+    <Resource Include="🧦.png" />
   </ItemGroup>
 
 </Project>

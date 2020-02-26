@@ -37,10 +37,10 @@
             </TextBlock.RenderTransform>
         </TextBlock>
         <Image Visibility="{Binding ElementName=cb1,Path=IsChecked,Converter={StaticResource boolToVisConv}}" 
-               Source="subwoofer.png" Stretch="None"/>
+               Source="🧦.png" Stretch="None"/>
         <CheckBox FlowDirection="RightToLeft"
                   Style="{DynamicResource CheckBoxStyle1}" 
-                  Name="cb1" IsChecked="True">👁</CheckBox>
+                  Name="cb1" IsChecked="True">🎅👁‍🗨</CheckBox>
 
         <CheckBox Name="cb2">Blau/Gelb</CheckBox>
         <Rectangle Fill="{Binding ElementName=cb2,Path=IsChecked,Converter={StaticResource boolToBlue}}"
