@@ -159,6 +159,7 @@ namespace HalloAsync
             return Task.Run(() => Calc(wert));
         }
 
+        [Obsolete("Nimm das nüscht!!!")]
         public long Calc(int wert) // <--- alt und langsam
         {
             Thread.Sleep(4000);

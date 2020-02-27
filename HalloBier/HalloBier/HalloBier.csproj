@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Assets\beer.png" />
+    <None Remove="Assets\bullet_star.png" />
+    <None Remove="Assets\cup.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\beer.png" />
+    <Resource Include="Assets\bullet_star.png" />
+    <Resource Include="Assets\cup.png" />
+  </ItemGroup>
+
+</Project>
