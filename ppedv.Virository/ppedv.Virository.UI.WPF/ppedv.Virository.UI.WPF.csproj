@@ -7,12 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ppedv.Virository.Logic\ppedv.Virository.Logic.csproj" />
-    <ProjectReference Include="..\ppedv.Virository.Model\ppedv.Virository.Model.csproj" />
+    <PackageReference Include="EntityFramework" Version="6.4.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="ViewModels\" />
+    <ProjectReference Include="..\ppedv.Virository.Logic\ppedv.Virository.Logic.csproj" />
+    <ProjectReference Include="..\ppedv.Virository.Model\ppedv.Virository.Model.csproj" />
   </ItemGroup>
 
   <ItemGroup>
