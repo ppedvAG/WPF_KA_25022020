@@ -19,7 +19,7 @@
                 </Style>
             </StackPanel.Resources>
             <Button>Laden</Button>
-            <Button>Speichern</Button>
+            <Button Command="{Binding SaveCommand}">Speichern</Button>
             <Button>Neu</Button>
             <Button>Löschen</Button>
         </StackPanel>
@@ -32,7 +32,6 @@
 
             <DataGrid ItemsSource="{Binding VirenListe}"
                       SelectedItem="{Binding SelectedVirus}"/>
-
 
             <GridSplitter HorizontalAlignment="Stretch" Grid.Column="1"/>
             <ScrollViewer Grid.Column="2" VerticalScrollBarVisibility="Auto">
@@ -51,13 +50,16 @@
                         <RowDefinition Height="Auto"/>
                         <RowDefinition MinHeight="80" Height="*"/>
                         <RowDefinition Height="Auto"/>
-                        <RowDefinition  MinHeight="80" Height="*"/>
+                        <RowDefinition MinHeight="80" Height="*"/>
                     </Grid.RowDefinitions>
 
                     <Label>Name</Label>
                     <TextBox Text="{Binding SelectedVirus.Name}" Grid.Row="1"/>
                     <Label Grid.Row="2">Inkubationszeit</Label>
-                    <TextBox Text="{Binding SelectedVirus.Inkubationszeit}" Grid.Row="3"/>
+                    <DockPanel  Grid.Row="3">
+                        <TextBlock DockPanel.Dock="Right" Text="{Binding InkubationszeitDatum}" />
+                        <TextBox Text="{Binding Inkubationszeit,UpdateSourceTrigger=PropertyChanged}" />
+                    </DockPanel>
                     <Label Grid.Row="4">Tödlichkeit</Label>
                     <TextBox Text="{Binding SelectedVirus.Tödlichkeit}" Grid.Row="5"/>
                     <Label Grid.Row="6">Patzient Zero</Label>
